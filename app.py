@@ -42,10 +42,10 @@ with st.sidebar:
                     text = text.split()
                     text = [w for w in text if w.lower() not in ENGLISH_STOP_WORDS]
                     text = " ".join(text)
-if not text.strip():
-    st.error("No text found to generate Visualization. Try another file or disable stopword filtering.")
-else:
-    if file is not None:
+if file is not None:
+    if not text.strip():
+        st.error("No text found to generate Visualization. Try another file or disable stopword filtering.")
+    else:
         with st.spinner("Processing..."):
             if operation == "☁️Word Cloud":
                 plt.clf()
@@ -130,4 +130,5 @@ else:
                     mime="image/png"
         
                 )
+
 
