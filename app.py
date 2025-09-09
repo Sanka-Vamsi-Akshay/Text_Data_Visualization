@@ -38,7 +38,7 @@ with st.sidebar:
             st.subheader("Operation")
             operation = st.radio("Choose an analysis", ["☁️Word Cloud", "📊Word Frequency (Bar Chart)", "🔗Bigrams (Word Pairs)", "😄Sentiment Analysis"], index=0)
             if operation != "😄Sentiment Analysis":
-                if st.checkbox('Remove Stopwords):
+                if st.checkbox('Remove Stopwords'):
                     text = text.split()
                     text = [w for w in text if w.lower() not in ENGLISH_STOP_WORDS]
                     text = " ".join(text)
@@ -130,3 +130,4 @@ else:
                     mime="image/png"
         
                 )
+
