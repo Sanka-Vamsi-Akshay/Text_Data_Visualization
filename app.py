@@ -43,6 +43,8 @@ with st.sidebar:
                     text = text.split()
                     text = [w for w in text if w.lower() not in ENGLISH_STOP_WORDS]
                     text = " ".join(text)
+                if not st.checkbox("Case Sensitive"):
+                    text = text.lower()
 if file is not None:
     if not text.strip():
         st.error("No text found to generate Visualization. Try another file or disable stopword filtering.")
@@ -131,6 +133,7 @@ if file is not None:
                     mime="image/png"
         
                 )
+
 
 
 
